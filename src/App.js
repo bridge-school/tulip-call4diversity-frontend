@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+import { healthCheck } from "./api/health";
 
 class App extends Component {
+  componentDidMount() {
+    // this is here as an example for how to connect to the backend
+    // it should be removed once development has started
+    healthCheck();
+  }
+
   render() {
     return (
       <div className="App">
