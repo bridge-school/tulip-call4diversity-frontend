@@ -3,7 +3,7 @@ import React, { Component } from "react";
 /**
  * Class for App EventsContainer Component
  */
-class AppHeader extends Component {
+class EventsContainer extends Component {
 
     render() {
         return (
