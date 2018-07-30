@@ -1,15 +1,19 @@
-import { HOME_ACTIONS } from '../actions/index';
+import { CONFERENCE_ACTIONS } from '../actions';
 import INITIAL_STATE from './initialState';
 
-export const homeReducer = (state = INITIAL_STATE, action) => {
+/**
+ * Reducer for handling 
+ * actions associated with conferences
+ */
+export const conferenceReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
-        case HOME_ACTIONS.LOADING:
+        case CONFERENCE_ACTIONS.LOADING:
             state = {
                 ...state,
                 isLoading: action.payload.isLoading
             };
             break;
-        case HOME_ACTIONS.SET:
+        case CONFERENCE_ACTIONS.SET:
             state = {
                 ...state,
                 conferences: action.payload.conferences

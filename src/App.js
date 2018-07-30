@@ -12,6 +12,7 @@ import PageTitle from "./components/PageTitle.js";
 import Event from "./components/Event.js";
 import Criteria from "./components/Criteria.js";
 
+// Actions
 import { getAllConferences } from "./actions/index";
 
 class App extends Component {
@@ -26,30 +27,33 @@ class App extends Component {
     
     const { isLoading } = this.props;
 
-    if (isLoading) {
-      return <p>Loading...</p>;
-    }
-
     return (
       <div>
         <AppHeader>
           <AppTitle name="Call for Diversity" />
           <Button name="Submit Event" />
         </AppHeader>
-        <EventsComponentContainer />
+        {
+          isLoading
+          ? <p>Loading...</p>
+          : <EventsComponentContainer />
+        }
       </div>
     );
   }
 }
 
+// Mapping state and dispatch
+// to props and connecting them
+// --> To be extracted out into separate containers file?
 const EventsComponent = ({ conferences }) => (
   <EventsContainer>
     <PageTitle name="Upcoming Events" />
     {
-      conferences.map(conf => 
-        <Event key={conf.event.id}>
+      conferences.map(conference => 
+        <Event key={conference.id}>
           <Criteria>
-            {conf.event.name}
+            {conference.name}
           </Criteria>
         </Event>
       )
@@ -59,7 +63,7 @@ const EventsComponent = ({ conferences }) => (
 
 const mapStateToProps = state => {
 
-  const { conferences, isLoading } = state;
+  const { conferences, isLoading } = state.conferenceReducer;
 
   return {
     conferences,

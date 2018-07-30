@@ -1,17 +1,17 @@
 import conferences from '../api/conferences.js';
 
 /**
- * Constants
+ * General file for Redux Action Creators
  */
-export const HOME_ACTIONS = {
+
+// Constants
+export const CONFERENCE_ACTIONS = {
     LOADING: 'LOADING_CONFERENCES',
     SET: 'SET_CONFERENCES'
 }
 
-/**
- * Action Creators
- */
-export const getAllConferences = (dispatch) => {
+// Action Creators
+export const getAllConferences = dispatch => {
     dispatch(conferencesIsLoading(true));
     conferences.getAll()
     .then(res => {
@@ -22,14 +22,14 @@ export const getAllConferences = (dispatch) => {
 };
 
 const conferencesIsLoading = bool => ({
-    type: HOME_ACTIONS.LOADING,
+    type: CONFERENCE_ACTIONS.LOADING,
     payload: {
         isLoading: bool
     }
 });
 
 const getConferencesSuccess = conferences => ({
-    type: HOME_ACTIONS.SET,
+    type: CONFERENCE_ACTIONS.SET,
     payload: {
         conferences
     }
