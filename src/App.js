@@ -24,7 +24,7 @@ class App extends Component {
   
   render() {
     
-    const { isLoading, conferences } = this.props;
+    const { isLoading } = this.props;
 
     if (isLoading) {
       return <p>Loading...</p>;
