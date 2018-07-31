@@ -1,4 +1,4 @@
-import conferences from './mockData.json';
+import conferences from "./mockData.json";
 
 /**
  * Mocking call to API to get list of conferences
@@ -7,6 +7,8 @@ import conferences from './mockData.json';
 // Timeout in ms
 const TIMEOUT = 1000;
 
+//TODO: swap this out for the real API call
 export default {
-    getAll: () => new Promise((resolve, reject) => setTimeout(resolve, TIMEOUT, conferences))
-}
+  getAll: () =>
+    new Promise((resolve, reject) => setTimeout(resolve, TIMEOUT, conferences))
+};

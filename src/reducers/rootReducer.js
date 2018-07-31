@@ -1,10 +1,11 @@
-import { combineReducers } from '../../../../../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/redux';
-import { conferenceReducer } from './conferenceReducer';
-
+import { combineReducers } from "redux";
+import { loading } from "./loading";
+import { conferences } from "./conferences";
 /**
  * Root reducer for the app that
  * combines individual reducers
  */
 export const rootReducer = combineReducers({
-    conferenceReducer
+  loading,
+  conferences
 });
