@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import "./App.css";
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Custom components
 import AppHeader from "./components/AppHeader";
@@ -14,10 +15,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AppHeader>
-          <AppTitle name="Call for Diversity" />
+        <CssBaseline />
+        <AppHeader />
+          {/* <AppTitle name="Call for Diversity" />
           <Button name="Submit Event" />
-        </AppHeader>
+        </AppHeader> */}
         <section>
           <PageTitle name="Upcoming Events" />
           <EventsContainer />
