@@ -5,8 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Custom components
 import AppHeader from "./components/AppHeader";
-import AppTitle from "./components/AppTitle";
-import Button from "./components/Button";
 import PageTitle from "./components/PageTitle";
 
 import EventsContainer from "./containers/EventsContainer";
