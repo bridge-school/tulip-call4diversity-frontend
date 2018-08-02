@@ -1,7 +1,7 @@
 import React from "react";
-
 import Event from "./Event";
 import Criteria from "./Criteria";
+import SubmissionForm from "./Form/SubmissionForm";
 
 class EventsList extends React.Component {
   componentDidMount() {
@@ -16,6 +16,8 @@ class EventsList extends React.Component {
           ? null
           : conferences.map(conference => (
               <Event key={conference.id}>
+
+                <SubmissionForm /> 
                 <Criteria>{conference.name}</Criteria>
               </Event>
             ))}
