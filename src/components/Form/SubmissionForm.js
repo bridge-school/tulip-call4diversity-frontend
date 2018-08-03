@@ -1,7 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { StyledTextField } from "./TextInput";
-import TextField from "@material-ui/core/TextField";
 
 export const SubmissionForm = props => (
   <form action="">
