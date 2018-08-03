@@ -1,15 +1,14 @@
-import React from 'react';
-// import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import React from "react";
+import TextField from "@material-ui/core/TextField";
 
-const StyledTextField = ({
+export const StyledTextField = ({
   input,
   label,
   meta: { touched, error },
   ...custom
 }) => {
   return (
-    <TextField 
+    <TextField
       type="text"
       margin="normal"
       label={label}
@@ -18,6 +17,4 @@ const StyledTextField = ({
       {...custom}
     />
   );
-}
-
-export default StyledTextField;
+};
