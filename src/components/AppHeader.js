@@ -14,7 +14,14 @@ const styles = theme => ({
     },
     toolbar: {
         display: 'flex',
-        justifyContent: 'space-between'
+        //TODO: fix the size and centering
+        // border:'1px solid hotpink',
+        justifyContent: 'space-between',
+    },
+    appbar: {
+        textAlign: 'center',
+        // background: 'white',
+        // color: 
     }
 });
 
@@ -23,7 +30,7 @@ class AppHeader extends Component {
     render() {
         const { classes } = this.props;
         return (
-                <AppBar position="static">
+                <AppBar position="static" className={classes.appbar}>
                     <Toolbar className={classes.toolbar}>
                         <Typography variant="title" color="inherit">
                             Call for Diversity
