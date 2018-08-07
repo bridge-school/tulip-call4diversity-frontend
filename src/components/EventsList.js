@@ -1,4 +1,5 @@
 import React from "react";
+
 import Event from "./Event";
 import Criteria from "./Criteria";
 import {
@@ -19,8 +20,6 @@ class EventsList extends React.Component {
           ? null
           : conferences.map(conference => (
               <Event key={conference.id}>
-
-                <SubmissionForm /> 
                 <Criteria>{conference.name}</Criteria>
                 <ReduxFormMaker
                   name={`conference_${conference.name}`}
