@@ -22,6 +22,9 @@ const styles = theme => ({
       paddingBottom: theme.spacing.unit * 2,
       marginBottom: theme.spacing.unit * 3,
     },
+    eventLink: {
+        textDecoration: 'none'
+    }
   });
 
 
@@ -30,7 +33,7 @@ const Event = (props) => {
         const { name, location, date, websiteUrl} = props.conference;
         return(
             <Paper className={classes.root}>
-                <Typography variant="title" color="primary" gutterBottom><a target="_blank" href={websiteUrl}> {name}</a></Typography>
+                <Typography variant="title" color="primary" gutterBottom><a className={classes.eventLink} target="_blank" href={websiteUrl}> {name}</a></Typography>
                 <Typography variant="subheading" > {timestampFormatter(date)}  •  {location} </Typography>
                 <Criteria conference={props.conference}/>
             </Paper>

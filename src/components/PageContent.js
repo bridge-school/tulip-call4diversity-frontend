@@ -12,16 +12,11 @@ const styles = theme => ({
   },
 });
 
-
-
 const PageContent = (props) => {
   const { classes } = props;
     return <Grid md={8} xs={12} className={classes.grid}>
       {props.children}
     </Grid>;
-  
 }
-
-
 
 export default withStyles(styles)(PageContent);
