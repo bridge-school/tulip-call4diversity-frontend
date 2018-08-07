@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -10,18 +11,21 @@ import { withStyles } from '@material-ui/core/styles';
  */
 
 const styles = theme => ({
-    button: {
-    },
     toolbar: {
         display: 'flex',
-        //TODO: fix the size and centering
-        // border:'1px solid hotpink',
+        flexDirection: 'row',
         justifyContent: 'space-between',
     },
+    gridContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    gridChild: {
+        width: '100%',
+        maxWidth: '900px',
+        margin: 'auto'
+    },
     appbar: {
-        textAlign: 'center',
-        // background: 'white',
-        // color: 
     }
 });
 
@@ -30,16 +34,22 @@ class AppHeader extends Component {
     render() {
         const { classes } = this.props;
         return (
-                <AppBar position="static" className={classes.appbar}>
-                    <Toolbar className={classes.toolbar}>
-                        <Typography variant="title" color="inherit">
-                            Call for Diversity
-                        </Typography>
-                        <Button variant="contained" color="primary" className={classes.button}>
-                            Submit Event
-                        </Button>
-                    </Toolbar>
-                </AppBar>
+
+            <AppBar position="static" color="default" className={classes.appbar}>
+                <Grid container className={classes.gridContainer}>
+                    <Grid item xs={8} justify="center" className={classes.gridChild}>
+                        <Toolbar variant="dense" className={classes.toolbar}>
+                            <Typography variant="title" color="primary">
+                                Call for Diversity
+                            </Typography>
+                            <Button variant="contained" color="primary" className={classes.button}>
+                                Submit Event
+                            </Button>
+                        </Toolbar>
+                    </Grid>
+                </Grid>   
+            </AppBar>
+ 
         );
     }
 

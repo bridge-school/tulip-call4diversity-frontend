@@ -12,25 +12,27 @@ const styles = theme => ({
       padding: theme.spacing.unit * 2,
     },
     critTrue: {
+        flex: '1 0 180px',
         marginRight: theme.spacing.unit * 2,
         display: 'flex',
         lineHeight: '24px'
     },
     critFalse: {
-       textDecoration: "line-through",
-       marginRight: theme.spacing.unit * 3,
-       display: 'flex',
-       lineHeight: '24px'
+        flex: '1 0 180px',
+        textDecoration: "line-through",
+        marginRight: theme.spacing.unit * 2,
+        display: 'flex',
+        lineHeight: '24px'
     },
     ul: {
         listStyleType: 'none',
         display: 'flex',
         marginLeft: '0',
-        paddingLeft: '0'
+        paddingLeft: '0',
+        flexFlow: 'row wrap'
     },
     icon: {
         marginRight: theme.spacing.unit,
-
     }
   });
 

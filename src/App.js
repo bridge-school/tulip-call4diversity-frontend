@@ -4,6 +4,7 @@ import "./App.css";
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Custom components
+import Grid from '@material-ui/core/Grid';
 import PageContent from "./components/PageContent";
 import AppHeader from "./components/AppHeader";
 import PageTitle from "./components/PageTitle";
@@ -16,9 +17,6 @@ class App extends Component {
       <div>
         <CssBaseline />
         <AppHeader />
-          {/* <AppTitle name="Call for Diversity" />
-          <Button name="Submit Event" />
-        </AppHeader> */}
         <PageContent>
           <PageTitle name="Upcoming Events" />
           <EventsContainer />
