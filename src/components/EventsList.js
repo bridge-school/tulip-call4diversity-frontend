@@ -15,9 +15,7 @@ class EventsList extends React.Component {
         {isLoading
           ? null
           : conferences.map(conference => (
-              <Event key={conference.id} conference={conference}>
-                <Criteria>{conference.name}</Criteria>
-              </Event>
+              <Event key={conference.id} conference={conference}/>
             ))}
       </div>
     );

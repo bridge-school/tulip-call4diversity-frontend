@@ -12,9 +12,9 @@ const timestampFormatter = (timestamp) => {
  //TODO - finish proper date formatting
 }
 
-// TODO - add a location string assembler function
+// TODO - add a location string assembler function once backend loading
 
-// TODO - figure out what's up with the links
+// TODO - fix links/routing
 
 const styles = theme => ({
     root: {

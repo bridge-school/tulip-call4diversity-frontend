@@ -37,7 +37,7 @@ class AppHeader extends Component {
 
             <AppBar position="static" color="default" className={classes.appbar}>
                 <Grid container className={classes.gridContainer}>
-                    <Grid item xs={8} justify="center" className={classes.gridChild}>
+                    <Grid item md={8} xs={12} justify="center" className={classes.gridChild}>
                         <Toolbar variant="dense" className={classes.toolbar}>
                             <Typography variant="title" color="primary">
                                 Call for Diversity

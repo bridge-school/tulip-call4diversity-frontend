@@ -16,7 +16,7 @@ const styles = theme => ({
 
 const PageContent = (props) => {
   const { classes } = props;
-    return <Grid xs={8} className={classes.grid}>
+    return <Grid md={8} xs={12} className={classes.grid}>
       {props.children}
     </Grid>;
   
