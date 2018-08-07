@@ -17,4 +17,3 @@ export const ReduxFormMaker = ({ name, formComponent, ...restProps }) => {
   const MyForm = reduxForm({ form: name })(formComponent);
   return <MyForm {...restProps} />;
 };
-
