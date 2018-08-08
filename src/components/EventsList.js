@@ -1,9 +1,7 @@
 import React from "react";
 import Event from "./Event";
-import {
-  ReduxFormMaker,
-  SubmissionForm
-} from "../components/Form/SubmissionForm";
+import FormContainer from "./Form/FormContainer";
+import PageTitle from "./PageTitle";
 
 class EventsList extends React.Component {
   componentDidMount() {
@@ -18,12 +16,11 @@ class EventsList extends React.Component {
           ? null
           : conferences.map(conference => (
             <Event key={conference.id} conference={conference}/>
-            ))}
+          ))}
+
         {/* Form component is here for now, so we can see it in the front end */}
-        <ReduxFormMaker
-          name={`SubmissionForm`}
-          formComponent={SubmissionForm}
-        />
+        <PageTitle name="Submit an Event" />
+        <FormContainer />
       </div>
     );
   }
