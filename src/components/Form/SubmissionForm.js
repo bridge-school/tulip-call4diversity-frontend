@@ -1,9 +1,18 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+
 import StyledTextField from "./TextInput";
+
+import "react-widgets/dist/css/react-widgets.css";
+import Moment from "moment";
+import momentLocalizer from "react-widgets-moment";
+import DateTimePicker from "react-widgets/lib/DateTimePicker";
 
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
+
+Moment.locale("en");
+momentLocalizer();
 
 export const SubmissionForm = props => (
   <form action="">
@@ -21,6 +30,8 @@ export const SubmissionForm = props => (
         label="Event Website"
       />
       {/* Date Picker */}
+      {/* testing */}
+      <DateTimePicker />
       <Field
         name="event-location"
         component={StyledTextField}
@@ -31,7 +42,8 @@ export const SubmissionForm = props => (
     </div>
     <div className="form-block">
       {/* Date Picker */}
-
+      {/* testing */}
+      <DateTimePicker />
       <Field
         name="sub-website"
         component={StyledTextField}
