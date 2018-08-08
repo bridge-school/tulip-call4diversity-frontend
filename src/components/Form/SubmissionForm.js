@@ -2,6 +2,18 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { StyledTextField } from "./TextInput";
 import Button from '@material-ui/core/Button';
+import 'react-widgets/dist/css/react-widgets.css';
+// import DateTimePicker from 'react-widgets/lib/DateTimePicker';
+import Globalize from 'globalize';
+import globalizeLocalizer from 'react-widgets-globalize';
+import { render } from 'react-dom';
+import DropdownList from 'react-widgets/lib/DropdownList';
+
+Globalize.locale('en')
+
+globalizeLocalizer()
+
+render(<DropdownList />, document.getElementById('app-root'))
 
 export const SubmissionForm = props => (
   <form action="">
@@ -18,6 +30,7 @@ export const SubmissionForm = props => (
       label="Event Website"
     />
     {/* Date Picker */}
+    {/* <DateTimePicker/> */}
     <Field
       name="location"
       component={StyledTextField}
