@@ -10,6 +10,7 @@ class Event extends Component {
             <article>{ this.props.children }</article>
         );
     }
+    
 
 }
 
