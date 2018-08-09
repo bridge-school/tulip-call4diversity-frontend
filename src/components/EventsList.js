@@ -1,23 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import Event from "./Event";
 import FormContainer from "./Form/FormContainer";
 import PageTitle from "./PageTitle";
 
-class EventsList extends React.Component {
+
+class EventsList extends Component {
   componentDidMount() {
     this.props.getData();
   }
 
   render() {
-    const { conferences, isLoading } = this.props;
+    const { conferences, isLoading, hasErrors } = this.props;
+
     return (
       <div>
         {isLoading
-          ? null
-          : conferences.map(conference => (
-            <Event key={conference.id} conference={conference}/>
-          ))}
-
+          ? "Loading..."
+          : hasErrors
+            ? "Oops! Something went wrong"
+            : conferences.length === 0
+              ? "There are currently no conferences coming up. Stay tuned!"
+              : conferences.map(conference => (
+                <Event key={conference.id} conference={conference} />
+              ))
+        }
         {/* Form component is here for now, so we can see it in the front end */}
         <PageTitle name="Submit an Event" />
         <FormContainer />
