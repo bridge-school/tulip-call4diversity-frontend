@@ -13,7 +13,7 @@ class EventsList extends Component {
 
   render() {
     const { conferences, isLoading, hasErrors } = this.props;
-    console.log(this.props);
+
     return (
       <div>
         {isLoading
