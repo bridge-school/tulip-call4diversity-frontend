@@ -6,11 +6,11 @@ import Typography from '@material-ui/core/Typography';
 
 import Criteria from './Criteria';
 
-const timestampFormatter = (timestamp) => {
-  const date = new Date(timestamp);
-  return `${date.toUTCString()}`
-  //TODO - finish proper date formatting
-}
+//TODO - finish proper date formatting
+// const timestampFormatter = (timestamp) => {
+//   const date = new Date(timestamp);
+//   return `${date.toUTCString()}`
+// }
 
 // TODO - add a location string assembler function once backend loading
 
