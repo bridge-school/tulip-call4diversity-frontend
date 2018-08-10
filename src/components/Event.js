@@ -42,7 +42,7 @@ const Event = (props) => {
   const dateToFormat = (date) => moment(date).format('LL');
   
   return (
-    <Paper className={classes.root} key={id}>
+    <Paper className={classes.root}>
     
       <Typography variant="title" color="primary" gutterBottom><a className={classes.eventLink} target="_blank" href={websiteUrl}> {name}</a></Typography>
       <Typography variant="subheading" >
