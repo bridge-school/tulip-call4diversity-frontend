@@ -12,27 +12,48 @@ import EventsContainer from "./containers/EventsContainer";
 
 class App extends Component {
 
-
   render() {
     return (
       <div>
         <CssBaseline />
-        <AppHeader />
+        {/* TODO: Pass button status down from common state */}
+        <AppHeader buttonStatus={true} />
+
+        {/* TODO: Once common state is working, uncomment the props below and it should work (can't test so it might not work, but theoretically it should) */}
+
         <PageContent>
+            
+            { true/* { this.props.common.showLoading */
+              ?
+              <div>
+                <PageTitle name="Loading..." />
+                {/* Placeholder for loading component of the future */}
+              </div>
+              : null
+            }
 
-          {/* SHOW WHEN SOMETHING IS LOADING */}
-          <PageTitle name="Loading..." />
-          {/* <Loading>Loading...</Loading> component of the future which can also be used in conferences */}
+            { true /* { this.props.common.showConferences */
+              ? 
+              <div>
+                <PageTitle name="Upcoming Events" />
+                <EventsContainer />
+              </div>
+              : null
+            }
 
-          {/* SHOW ON INITIAL LOAD AND WHEN FORM IS SUCCESSFULLY SUBMITTED AND NEW CONFERENCES ARE LOADED AGAIN */}
-          <PageTitle name="Upcoming Events" />
-          <EventsContainer />
+            { true /* { this.props.common.showForm */
+              ? 
+              <div>
+                <PageTitle name="Submit an Event" />
+                <FormContainer />
+              </div>
+              : null
+            }
 
-          {/* SHOW WHEN SUBMIT EVENT BUTTON CLICKED --> REMEMBER TO HIDE THE BUTTON */}
-          <PageTitle name="Submit an Event" />
-          <FormContainer />
 
         </PageContent>
+
+
       </div>
     );
   }
