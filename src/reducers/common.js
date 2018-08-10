@@ -8,19 +8,18 @@ const COMPONENT_VIEW_INITAL_STATE = {
   showButton: true
 }
 
-export const componentViewState = (state = COMPONENT_VIEW_INITAL_STATE, action) => {
+// The idea behind this is that the reducer accepts a component and triggers the specified action on that component
+export const common = (state = COMPONENT_VIEW_INITAL_STATE, action) => {
   switch (action.type) {
-    case COMMON_ACTIONS.LOADING:
-      return {
-        ...state
-      };
     case COMMON_ACTIONS.SHOW:
-      return {
-        ...state
-      };
+    return {
+      ...state,
+      [action.showX]: true
+    };
     case COMMON_ACTIONS.HIDE:
       return {
-        ...state
+        ...state,
+        [action.showX]: false
       };
     default:
       return {
@@ -28,4 +27,3 @@ export const componentViewState = (state = COMPONENT_VIEW_INITAL_STATE, action) 
       };
   }
 };
-

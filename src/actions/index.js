@@ -37,3 +37,32 @@ const getConferencesSuccess = conferences => ({
 const getConferencesFailure = () => ({
   type: CONFERENCE_ACTIONS.LOAD_FAILURE
 });
+
+
+// NEW COMPONENT VIEW STUFF
+//Actions
+
+export const COMMON_ACTIONS = {
+  COMPONENT_SHOW: "COMPONENT_SHOW",
+  COMPONENT_HIDE: "COMPONENT_HIDE"
+};
+
+//Action Creators
+const componentShow = (showX) => ({
+  type: COMMON_ACTIONS.COMPONENT_SHOW,
+  payload: {
+    showX
+  }
+});
+
+const componentHide = (showX) => ({
+  type: COMMON_ACTIONS.COMPONENT_HIDE,
+  payload: {
+    showX
+  }
+});
+
+// OLD FORMAT 
+// export const componentShow = (showX, bool) => store.dispatch({ type: COMMON_ACTIONS.COMPONENT_SHOW, showX, bool});
+// export const componentHide = (showX, bool) => store.dispatch({ type: COMMON_ACTIONS.COMPONENT_HIDE, showX, bool});
+

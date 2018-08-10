@@ -8,12 +8,11 @@ import PageContent from "./components/PageContent";
 import AppHeader from "./components/AppHeader";
 import PageTitle from "./components/PageTitle";
 import FormContainer from "./components/Form/FormContainer";
-
 import EventsContainer from "./containers/EventsContainer";
 
-
-
 class App extends Component {
+
+
   render() {
     return (
       <div>
@@ -23,7 +22,7 @@ class App extends Component {
 
           {/* SHOW WHEN SOMETHING IS LOADING */}
           <PageTitle name="Loading..." />
-          {/* <Loading>Loading...</Loading> component of the future */}
+          {/* <Loading>Loading...</Loading> component of the future which can also be used in conferences */}
 
           {/* SHOW ON INITIAL LOAD AND WHEN FORM IS SUCCESSFULLY SUBMITTED AND NEW CONFERENCES ARE LOADED AGAIN */}
           <PageTitle name="Upcoming Events" />

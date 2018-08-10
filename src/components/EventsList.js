@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Event from "./Event";
 
 
+
 class EventsList extends Component {
   componentDidMount() {
     this.props.getData();
