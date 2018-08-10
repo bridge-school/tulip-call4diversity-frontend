@@ -1,49 +1,19 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-<<<<<<< HEAD
 import { StyledTextField } from "./TextInput";
-import TextField from "@material-ui/core/TextField";
 import Button from '@material-ui/core/Button';
-import Button from "@material-ui/core/Button";
-=======
-
 import StyledTextField from "./TextInput";
-
->>>>>>> 35e83028f1ed533f062271e4667bb5930fd7a6ec
 import "react-widgets/dist/css/react-widgets.css";
 import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
 import DateTimePicker from "react-widgets/lib/DateTimePicker";
-
 import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
 
 Moment.locale("en");
 momentLocalizer();
 
 export const SubmissionForm = props => (
   <form action="">
-<<<<<<< HEAD
-    <Field
-      name="name"
-      component={StyledTextField}
-      type="text"
-      label="Event Name"
-    />
-    <Field
-      name="website"
-      component={StyledTextField}
-      type="text"
-      label="Event Website"
-    />
-    <DateTimePicker />
-    <Field
-      name="location"
-      component={StyledTextField}
-      type="text"
-      label="Event Location"
-    />
-=======
     <div className="form-block">
       <Field
         name="event-name"
@@ -98,7 +68,6 @@ export const SubmissionForm = props => (
       />
       <Divider />
     </div>
->>>>>>> 35e83028f1ed533f062271e4667bb5930fd7a6ec
     <Button
       type="submit"
       disabled={props.pristine || props.submitting}
