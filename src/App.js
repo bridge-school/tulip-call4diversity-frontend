@@ -11,6 +11,8 @@ import FormContainer from "./components/Form/FormContainer";
 
 import EventsContainer from "./containers/EventsContainer";
 
+
+
 class App extends Component {
   render() {
     return (
@@ -18,13 +20,19 @@ class App extends Component {
         <CssBaseline />
         <AppHeader />
         <PageContent>
+
+          {/* SHOW WHEN SOMETHING IS LOADING */}
+          <PageTitle name="Loading..." />
+          {/* <Loading>Loading...</Loading> component of the future */}
+
+          {/* SHOW ON INITIAL LOAD AND WHEN FORM IS SUCCESSFULLY SUBMITTED AND NEW CONFERENCES ARE LOADED AGAIN */}
           <PageTitle name="Upcoming Events" />
           <EventsContainer />
-        </PageContent>
-        <PageContent>
-          {/* Form component is here for now, so we can see it in the front end */}
+
+          {/* SHOW WHEN SUBMIT EVENT BUTTON CLICKED --> REMEMBER TO HIDE THE BUTTON */}
           <PageTitle name="Submit an Event" />
           <FormContainer />
+
         </PageContent>
       </div>
     );
