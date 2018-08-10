@@ -3,6 +3,7 @@ import React from "react";
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import moment from 'moment';
 
 import Criteria from './Criteria';
 
@@ -35,13 +36,18 @@ const styles = theme => ({
 
 const Event = (props) => {
   const { classes } = props;
-  const { name, city, state, country, eventDate, websiteUrl } = props.conference;
+  const { id, name, city, state, country, eventDate, websiteUrl, submissionDueDate } = props.conference;
   // const { name, location, eventDate, websiteUrl } = props.conference;
+  console.log("event date", eventDate)
+  const dateToFormat = (date) => moment(date).format('LL');
+  
   return (
-    <Paper className={classes.root}>
+    <Paper className={classes.root} key={id}>
+    
       <Typography variant="title" color="primary" gutterBottom><a className={classes.eventLink} target="_blank" href={websiteUrl}> {name}</a></Typography>
-      <Typography variant="subheading" > {eventDate}  •  {city}, {state}, {country} </Typography>
-      {/* <Typography variant="subheading" > {timestampFormatter(date)}  •  {location} </Typography> */}
+      <Typography variant="subheading" >
+          {dateToFormat({eventDate})} •  {city}, {state}, {country} </Typography>
+      <Typography color="secondary"> Submission Due Date: {dateToFormat({submissionDueDate})} </Typography>
       <Criteria conference={props.conference} />
     </Paper>
   );
