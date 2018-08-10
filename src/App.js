@@ -17,12 +17,12 @@ class App extends Component {
       <div>
         <CssBaseline />
         {/* TODO: Pass button status down from common state - can use showButton or !showForm */}
-        <AppHeader buttonStatus={true} />
+        <AppHeader buttonStatus={this.props.fakeProps.displayForm} fakePropsForExperiment={this.props.fakeProps}/>
 
         {/* TODO: Once common state is working, uncomment the props below and it should work (can't test so it might not work, but theoretically it should) */}
         <PageContent>
             
-            { true/* { this.props.common.showLoading */
+            { this.props.fakeProps.displayLoading /* { this.props.common.displayLoading */
               ?
               <div>
                 <PageTitle name="Loading..." />
@@ -31,7 +31,8 @@ class App extends Component {
               : null
             }
 
-            { true /* { this.props.common.showConferences */
+            { this.props.fakeProps.displayConferences /* { this.props.common.displayConferences */
+
               ? 
               <div>
                 <PageTitle name="Upcoming Events" />
@@ -40,7 +41,7 @@ class App extends Component {
               : null
             }
 
-            { true /* { this.props.common.showForm */
+            { this.props.fakeProps.displayForm /* { this.props.common.displayForm */
               ? 
               <div>
                 <PageTitle name="Submit an Event" />

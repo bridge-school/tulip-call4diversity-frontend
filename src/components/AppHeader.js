@@ -31,6 +31,8 @@ const styles = theme => ({
 
 class AppHeader extends Component {
 
+
+
     render() {
         const { classes } = this.props;
         return (
@@ -42,7 +44,8 @@ class AppHeader extends Component {
                             <Typography variant="title" color="primary">
                                 Call for Diversity
                             </Typography>
-                            { this.props.buttonStatus
+                            {/* NOTE: The button is currently being toggled based on whether the form is showing or not */}
+                            { !this.props.buttonStatus
                             ?
                                 <Button variant="contained" color="primary" className={classes.button} /*FOR THE FUTURE, A TRIGGER! onClick={componentShow(displayForm) hideComponent(displayConferences)}*/>
                                     Submit Event
