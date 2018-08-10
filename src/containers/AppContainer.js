@@ -33,8 +33,8 @@ const mapStateToProps = (state) => {
 // // PLAYGROUND OF FAKE PROPS SO I CAN TEST SHIT
 const fakeProps = {
   displayConferences: true,
-  displayForm: false,
-  displayLoading: false
+  displayForm: true,
+  displayLoading: true
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
