@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <CssBaseline />
-        {/* TODO: Pass button status down from common state */}
+        {/* TODO: Pass button status down from common state - can use showButton or !showForm */}
         <AppHeader buttonStatus={true} />
 
         {/* TODO: Once common state is working, uncomment the props below and it should work (can't test so it might not work, but theoretically it should) */}

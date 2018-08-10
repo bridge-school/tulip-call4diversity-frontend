@@ -42,9 +42,12 @@ class AppHeader extends Component {
                             <Typography variant="title" color="primary">
                                 Call for Diversity
                             </Typography>
-                            <Button variant="contained" color="primary" className={classes.button}>
-                                Submit Event
-                            </Button>
+                            { this.props.buttonStatus
+                            ?
+                                <Button variant="contained" color="primary" className={classes.button}>
+                                    Submit Event
+                                </Button>
+                            : null }
                         </Toolbar>
                     </Grid>
                 </Grid>   
