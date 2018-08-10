@@ -44,7 +44,7 @@ class AppHeader extends Component {
                             </Typography>
                             { this.props.buttonStatus
                             ?
-                                <Button variant="contained" color="primary" className={classes.button}>
+                                <Button variant="contained" color="primary" className={classes.button} /*FOR THE FUTURE, A TRIGGER! onClick={componentShow(displayForm) hideComponent(displayConferences)}*/>
                                     Submit Event
                                 </Button>
                             : null }

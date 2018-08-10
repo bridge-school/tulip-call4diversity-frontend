@@ -20,7 +20,6 @@ class App extends Component {
         <AppHeader buttonStatus={true} />
 
         {/* TODO: Once common state is working, uncomment the props below and it should work (can't test so it might not work, but theoretically it should) */}
-
         <PageContent>
             
             { true/* { this.props.common.showLoading */
