@@ -25,16 +25,17 @@ const mapDispatchToProps = dispatch => ({
 // TODO: putting anything in here causes infinite loops... whyyyyy!?!?!
 const mapStateToProps = (state) => {
   return {
-    fakeProps
+    state: state
+    // fakeProps
     // ONCE WE GET REAL STATE GOING WE CAN DO STUFF
   }
 }
 
 // // PLAYGROUND OF FAKE PROPS SO I CAN TEST SHIT
-const fakeProps = {
-  displayConferences: true,
-  displayForm: true,
-  displayLoading: true
-}
+// const fakeProps = {
+//   displayConferences: true,
+//   displayForm: true,
+//   displayLoading: true
+// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
