@@ -19,7 +19,10 @@ export default {
   getAll: () => axios.get(`${API_BASE_URL}/conference`),
   postSubmissionForm: (values) => {
     const data = sanitizeValues(values);
-    axios.post(`${API_BASE_URL}/conference`, data);
-  } 
+    var headers = {
+      'Content-Type': 'multipart/form-data'
+    }
+    axios.post(`${API_BASE_URL}/conference`, data, headers);
+    } 
 };
 

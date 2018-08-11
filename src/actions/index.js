@@ -49,10 +49,12 @@ const addNewConferenceFailure = () => ({
   type: CONFERENCE_ACTIONS.POST_FAILURE,
 })
 
+// TODO: use this thunk in SubmissionForm
 export const addNewConference = (values) => dispatch => 
 conferences.postSubmissionForm(values)
     .then(res => {
       dispatch(addNewConferenceSuccess(res.data));
+      // TODO: call get conference API call
     })
     .catch(err => {
       dispatch(addNewConferenceFailure());
