@@ -47,12 +47,13 @@ export const SubmissionForm = props => (
       <Field
         name="sub-website"
         component={StyledTextField}
-        type="url"
         label="Submission Website"
       />
-      {/* Radio */}
-      {/* Radio */}
-      {/* Radio */}
+
+      <Field name={compensation} component={renderRadioButtonGroup(compensation, 'Are all speakers compensated at your event?')} />
+      <Field name={codeOfConduct} component={renderRadioButtonGroup(codeOfConduct, 'Does your event have a publicly visible code of conduct?')} />
+      <Field name={scholarship} component={renderRadioButtonGroup(scholarship, 'Does your event provide diversity scholarships?')} />
+      
       <Divider />
     </div>
     <div className="form-block">
@@ -90,7 +91,8 @@ export const SubmissionForm = props => (
   </form>
 );
 
-export const ReduxFormMaker = ({ name, formComponent, ...restProps }) => {
-  const MyForm = reduxForm({ form: name })(formComponent);
-  return <MyForm {...restProps} />;
+const onSubmit = (values) => {
+  // postSubmissionForm(values);
 };
+
+export default reduxForm({ form: 'SubmissionForm', onSubmit })(SubmissionForm);
