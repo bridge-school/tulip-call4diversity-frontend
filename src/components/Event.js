@@ -51,16 +51,14 @@ const Event = props => {
     <Paper className={classes.root}>
       <Typography variant="title" color="primary" gutterBottom>
         <a className={classes.eventLink} target="_blank" href={websiteUrl}>
-          {" "}
           {name}
         </a>
       </Typography>
       <Typography variant="subheading">
-        {dateToFormat({ eventDate })} • {city}, {state}, {country}{" "}
+        {dateToFormat({ eventDate })} • {city}, {state}, {country}
       </Typography>
       <Typography color="secondary">
-        {" "}
-        Submission Due Date: {dateToFormat({ submissionDueDate })}{" "}
+        Submission Due Date: {dateToFormat({ submissionDueDate })}
       </Typography>
       <Criteria conference={props.conference} />
     </Paper>
