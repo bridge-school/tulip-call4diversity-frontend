@@ -1,30 +1,24 @@
-import React from 'react';
+import React from "react";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
-import FormHelperText from "@material-ui/core/FormHelperText";
+// import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 
 export const renderRadioButtonGroup = (type, label) => ({ input, ...rest }) => {
-    return (
-        <FormControl component="fieldset">
-            <FormLabel>{label}</FormLabel>
-            <RadioGroup
-                aria-label={type}
-                name={type}
-                value={input.value}
-                onChange={(event, value) => input.onChange(value)}
-            >
-                <FormControlLabel
-                    value="yes"
-                    control={<Radio />}
-                    label="yes"
-                />
-                <FormControlLabel value="no" control={<Radio />} label="no" />
-            </RadioGroup>
-        </FormControl>
-);
+  return (
+    <FormControl component="fieldset">
+      <FormLabel>{label}</FormLabel>
+      <RadioGroup
+        aria-label={type}
+        name={type}
+        value={input.value}
+        onChange={(event, value) => input.onChange(value)}
+      >
+        <FormControlLabel value="yes" control={<Radio />} label="yes" />
+        <FormControlLabel value="no" control={<Radio />} label="no" />
+      </RadioGroup>
+    </FormControl>
+  );
 };
-
-
