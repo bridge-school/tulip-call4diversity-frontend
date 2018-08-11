@@ -8,7 +8,9 @@ import conferences from "../api/conferences";
 export const CONFERENCE_ACTIONS = {
   LOADING: "LOADING_CONFERENCES",
   LOAD_SUCCESS: "LOAD_SUCCESS_CONFERENCES",
-  LOAD_FAILURE: "LOAD_FAILURE_CONFERENCES"
+  LOAD_FAILURE: "LOAD_FAILURE_CONFERENCES",
+  POST_SUCCESS: "POST_SUCCESS",
+  POST_FAILURE: "POST_FAILURE",
 };
 
 // Action Creators
@@ -38,6 +40,7 @@ const getConferencesFailure = () => ({
   type: CONFERENCE_ACTIONS.LOAD_FAILURE
 });
 
+<<<<<<< HEAD
 
 // NEW COMPONENT VIEW STUFF
 //Actions
@@ -66,3 +69,24 @@ const componentHide = (showX) => ({
 // export const componentShow = (showX, bool) => store.dispatch({ type: COMMON_ACTIONS.COMPONENT_SHOW, showX, bool});
 // export const componentHide = (showX, bool) => store.dispatch({ type: COMMON_ACTIONS.COMPONENT_HIDE, showX, bool});
 
+=======
+const addNewConferenceSuccess = (payload) => ({
+  type: CONFERENCE_ACTIONS.POST_SUCCESS,
+  payload,
+})
+
+const addNewConferenceFailure = () => ({
+  type: CONFERENCE_ACTIONS.POST_FAILURE,
+})
+
+// TODO: use this thunk in SubmissionForm
+export const addNewConference = (values) => dispatch => 
+conferences.postSubmissionForm(values)
+    .then(res => {
+      dispatch(addNewConferenceSuccess(res.data));
+      // TODO: call get conference API call
+    })
+    .catch(err => {
+      dispatch(addNewConferenceFailure());
+    });
+>>>>>>> master
