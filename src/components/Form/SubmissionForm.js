@@ -10,21 +10,56 @@ import DateTimePicker from "react-widgets/lib/DateTimePicker";
 
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
+import conferences from '../../api/conferences';
+
+import { renderRadioButtonGroup } from './RadioButton';
 
 Moment.locale("en");
 momentLocalizer();
 
+const compensation = "compensation";
+const codeOfConduct = "codeOfConduct";
+const scholarship = "scholarship";
+
+
+// const required = value => value ? undefined : 'Required';
+// const maxLength = max => value =>
+//   value && value.length > max ? `Must be ${max} characters or less` : undefined;
+// const maxLength15 = maxLength(15);
+// const number = value => value && isNaN(Number(value)) ? 'Must be a number' : undefined;
+// const minValue = min => value =>
+//   value && value < min ? `Must be at least ${min}` : undefined
+// const minValue18 = minValue(18)
+// const email = value =>
+//   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
+//     'Invalid email address' : undefined
+// const tooOld = value =>
+//   value && value > 65 ? 'You might be too old for this' : undefined
+// const aol = value =>
+//   value && /.+@aol\.com/.test(value) ?
+//     'Really? You still use AOL for your email?' : undefined
+
+// const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
+//   <div>
+//     <label>{label}</label>
+//     <div>
+//       <input {...input} placeholder={label} type={type} />
+//       {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+//     </div>
+//   </div>
+// )
+
 export const SubmissionForm = props => (
-  <form action="">
+  <form action="" onSubmit={props.handleSubmit}>
     <div className="form-block">
       <Field
-        name="event-name"
+        name="name"
         component={StyledTextField}
         type="text"
         label="Event Name"
       />
       <Field
-        name="event-website"
+        name="url"
         component={StyledTextField}
         type="url"
         label="Event Website"
@@ -33,7 +68,7 @@ export const SubmissionForm = props => (
       {/* testing */}
       <DateTimePicker />
       <Field
-        name="event-location"
+        name="city"
         component={StyledTextField}
         type="text"
         label="Event Location"
@@ -45,7 +80,7 @@ export const SubmissionForm = props => (
       {/* testing */}
       <DateTimePicker />
       <Field
-        name="sub-website"
+        name="submissionUrl"
         component={StyledTextField}
         label="Submission Website"
       />
@@ -58,13 +93,13 @@ export const SubmissionForm = props => (
     </div>
     <div className="form-block">
       <Field
-        name="name"
+        name="contactName"
         component={StyledTextField}
         type="text"
         label="Contact Name"
       />
       <Field
-        name="email"
+        name="contactEmail"
         component={StyledTextField}
         type="email"
         label="Contact Email"
@@ -92,7 +127,7 @@ export const SubmissionForm = props => (
 );
 
 const onSubmit = (values) => {
-  // postSubmissionForm(values);
+  conferences.postSubmissionForm(values);
 };
 
 export default reduxForm({ form: 'SubmissionForm', onSubmit })(SubmissionForm);
