@@ -34,11 +34,13 @@ const styles = theme => ({
 });
 
 const SearchBar = props => {
-  const { classes } = props;
+  const { classes, searchText, onChange } = props;
   return (
     <TextField
       type="text"
       placeholder="Search for event by name"
+      value={searchText}
+      onChange={onChange}
       margin="normal"
       fullWidth
       InputProps={{
