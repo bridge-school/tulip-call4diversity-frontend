@@ -51,7 +51,7 @@ const StyledTextField = ({
   ...custom
 }) => {
   const { classes } = props;
-  console.log(custom, input);
+
   return (
     <TextField
       type="text"
