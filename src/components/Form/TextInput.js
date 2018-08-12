@@ -2,6 +2,8 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
+// TODO: get error validation working and add proper helper text
+
 const styles = theme => ({
   bootstrapRoot: {
     padding: 0,
@@ -57,7 +59,8 @@ const StyledTextField = ({
       type="text"
       margin="normal"
       label={label}
-      errorText={touched && error}
+      error={touched && error}
+      helperText="" // need to fill this in with a useful msg
       {...input}
       InputProps={{
         disableUnderline: true,
