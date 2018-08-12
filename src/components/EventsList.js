@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Event from "./Event";
+import SearchBar from "./SearchBar";
 import FormContainer from "./Form/FormContainer";
 import PageTitle from "./PageTitle";
-
 
 class EventsList extends Component {
   componentDidMount() {
@@ -14,6 +14,7 @@ class EventsList extends Component {
 
     return (
       <div>
+        <SearchBar />
         {isLoading
           ? "Loading..."
           : hasErrors
@@ -21,9 +22,8 @@ class EventsList extends Component {
             : conferences.length === 0
               ? "There are currently no conferences coming up. Stay tuned!"
               : conferences.map(conference => (
-                <Event key={'event_' + conference.id} conference={conference} />
-              ))
-        }
+                  <Event key={conference.id} conference={conference} />
+                ))}
         {/* Form component is here for now, so we can see it in the front end */}
         <PageTitle name="Submit an Event" />
         <FormContainer />
