@@ -51,7 +51,7 @@ const StyledTextField = ({
   ...custom
 }) => {
   const { classes } = props;
-
+  console.log(custom, input);
   return (
     <TextField
       type="text"
@@ -59,7 +59,6 @@ const StyledTextField = ({
       label={label}
       errorText={touched && error}
       {...input}
-      {...custom}
       InputProps={{
         disableUnderline: true,
         classes: {
