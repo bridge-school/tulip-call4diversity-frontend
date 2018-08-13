@@ -19,7 +19,7 @@ const FormContainer = props => {
   const { classes } = props;
   return (
     <Paper className={classes.root}>
-      <ReduxFormMaker conferencesShow={this.props.conferencesShow} formHide={this.props.formHide}/>
+      <ReduxFormMaker />
     </Paper>
   );
 }
