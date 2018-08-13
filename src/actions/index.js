@@ -1,4 +1,4 @@
-import conferences from "../api/conferences";
+import conferences from '../api/conferences';
 
 /**
  * General file for Redux Action Creators
@@ -6,16 +6,12 @@ import conferences from "../api/conferences";
 
 // Constants
 export const CONFERENCE_ACTIONS = {
-  LOADING: "LOADING_CONFERENCES",
-  LOAD_SUCCESS: "LOAD_SUCCESS_CONFERENCES",
-  LOAD_FAILURE: "LOAD_FAILURE_CONFERENCES",
-  POST_SUCCESS: "POST_SUCCESS",
-<<<<<<< HEAD
-  POST_FAILURE: "POST_FAILURE",
-  SEARCH: "SEARCH_CONFERENCES"
-=======
-  POST_FAILURE: "POST_FAILURE"
->>>>>>> 0ff60017749ce575d77729b43dc492141c1a5064
+  LOADING: 'LOADING_CONFERENCES',
+  LOAD_SUCCESS: 'LOAD_SUCCESS_CONFERENCES',
+  LOAD_FAILURE: 'LOAD_FAILURE_CONFERENCES',
+  POST_SUCCESS: 'POST_SUCCESS',
+  POST_FAILURE: 'POST_FAILURE',
+  SEARCH: 'SEARCH_CONFERENCES'
 };
 
 // Action Creators
@@ -48,26 +44,21 @@ const getConferencesFailure = () => ({
   type: CONFERENCE_ACTIONS.LOAD_FAILURE
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 0ff60017749ce575d77729b43dc492141c1a5064
 // NEW COMPONENT VIEW STUFF
 //Actions
 
 export const COMMON_ACTIONS = {
-  COMPONENT_SHOW: "COMPONENT_SHOW",
-  COMPONENT_HIDE: "COMPONENT_HIDE",
-  CONFERENCES_SHOW: "CONFERENCES_SHOW",
-  CONFERENCES_HIDE: "CONFERENCES_HIDE",
-  FORM_SHOW: "FORM_SHOW",
-  FORM_HIDE: "FORM_HIDE",
-  LOADING_SHOW: "LOADING_SHOW",
-  LOADING_HIDE: "LOADING_HIDE",
+  COMPONENT_SHOW: 'COMPONENT_SHOW',
+  COMPONENT_HIDE: 'COMPONENT_HIDE',
+  CONFERENCES_SHOW: 'CONFERENCES_SHOW',
+  CONFERENCES_HIDE: 'CONFERENCES_HIDE',
+  FORM_SHOW: 'FORM_SHOW',
+  FORM_HIDE: 'FORM_HIDE',
+  LOADING_SHOW: 'LOADING_SHOW',
+  LOADING_HIDE: 'LOADING_HIDE'
 };
 
 //Action Creators
-<<<<<<< HEAD
 // Saving these two for future refactor
 // const componentShow = (showX) => ({
 //   type: COMMON_ACTIONS.COMPONENT_SHOW
@@ -99,26 +90,11 @@ const loadingShow = () => ({
 
 const loadingHide = () => ({
   type: COMMON_ACTIONS.LOADING_HIDE
-=======
-const componentShow = showX => ({
-  type: COMMON_ACTIONS.COMPONENT_SHOW,
-  payload: {
-    showX
-  }
-});
-
-const componentHide = showX => ({
-  type: COMMON_ACTIONS.COMPONENT_HIDE,
-  payload: {
-    showX
-  }
->>>>>>> 0ff60017749ce575d77729b43dc492141c1a5064
 });
 
 // OLD FORMAT
 // export const componentShow = (showX, bool) => store.dispatch({ type: COMMON_ACTIONS.COMPONENT_SHOW, showX, bool});
 // export const componentHide = (showX, bool) => store.dispatch({ type: COMMON_ACTIONS.COMPONENT_HIDE, showX, bool});
-<<<<<<< HEAD
 
 // -----------------------------
 
@@ -157,5 +133,3 @@ const searchConferencesByName = searchText => ({
   }
 });
 // -----------------------------
-=======
->>>>>>> 0ff60017749ce575d77729b43dc492141c1a5064
