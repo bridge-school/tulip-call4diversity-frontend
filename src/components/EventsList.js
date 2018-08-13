@@ -6,9 +6,7 @@ class EventsList extends Component {
   componentDidMount() {
     this.props.getData();
   }
-  componentDidUpdate() {
-    console.log(this.props.conferencesShow)
-  }
+
 
   render() {
     const {

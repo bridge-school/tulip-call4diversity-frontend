@@ -14,11 +14,17 @@ import EventsContainer from "./containers/EventsContainer";
 
 class App extends Component {
 
+  componentDidUpdate() {
+
+  }
+
+
   render() {
 
     const {
       common,
       formShow,
+      formHide,
       conferencesHide,
       conferencesShow,
     } = this.props;
@@ -55,7 +61,7 @@ class App extends Component {
               ? 
               <div>
                 <PageTitle name="Submit an Event" />
-                <FormContainer conferencesShow={conferencesShow} />
+                <FormContainer conferencesShow={conferencesShow} formHide={formHide} />
               </div>
               : null
             }

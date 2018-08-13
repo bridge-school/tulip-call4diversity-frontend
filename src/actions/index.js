@@ -60,35 +60,36 @@ export const COMMON_ACTIONS = {
 };
 
 //Action Creators
-const componentShow = (showX) => ({
-  type: COMMON_ACTIONS.COMPONENT_SHOW
-});
+// Saving these two for future refactor
+// const componentShow = (showX) => ({
+//   type: COMMON_ACTIONS.COMPONENT_SHOW
+// });
 
-const componentHide = (showX) => ({
-  type: COMMON_ACTIONS.COMPONENT_HIDE
-});
+// const componentHide = (showX) => ({
+//   type: COMMON_ACTIONS.COMPONENT_HIDE
+// });
 
-const conferencesShow = (showX) => ({
+const conferencesShow = () => ({
   type: COMMON_ACTIONS.CONFERENCES_SHOW
 });
 
-const conferencesHide = (showX) => ({
+const conferencesHide = () => ({
   type: COMMON_ACTIONS.CONFERENCES_HIDE
 });
 
-const formShow = (showX) => ({
+const formShow = () => ({
   type: COMMON_ACTIONS.FORM_SHOW
 });
 
-const formHide = (showX) => ({
+const formHide = () => ({
   type: COMMON_ACTIONS.FORM_HIDE
 });
 
-const loadingShow = (showX) => ({
+const loadingShow = () => ({
   type: COMMON_ACTIONS.LOADING_SHOW
 });
 
-const loadingHide = (showX) => ({
+const loadingHide = () => ({
   type: COMMON_ACTIONS.LOADING_HIDE
 });
 

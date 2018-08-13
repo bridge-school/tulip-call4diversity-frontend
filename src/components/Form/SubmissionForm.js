@@ -145,6 +145,8 @@ export const SubmissionForm = props => (
 
 const onSubmit = values => {
   conferences.postSubmissionForm(values);
+  this.props.conferencesShow();
+  this.props.formHide();
 };
 
 export default reduxForm({ form: "SubmissionForm", onSubmit })(SubmissionForm);

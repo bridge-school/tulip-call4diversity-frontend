@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 import EventsList from "../components/EventsList";
 import { getAllConferences, filterConferences } from "../actions";
 
-const mapStateToProps = ({ conferences, loading, errors, search }) => ({
+const mapStateToProps = ({ conferences, loading, errors, search, common }) => ({
   conferences,
   filteredConferences: conferences.filter(conference =>
     conference.name.toLowerCase().includes(search.toLowerCase())
   ),
   isLoading: loading,
   hasErrors: errors,
-  searchText: search
+  searchText: search,
+  common
 });
 
 const mapDispatchToProps = dispatch => ({
