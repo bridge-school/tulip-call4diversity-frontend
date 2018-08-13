@@ -1,24 +1,17 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
-
-// TODO: get error validation working and add proper helper text
+import Search from "@material-ui/icons/Search";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 const styles = theme => ({
-  bootstrapRoot: {
-    padding: 0,
-    "label + &": {
-      marginTop: theme.spacing.unit * 3
-    }
-  },
   bootstrapInput: {
-    marginTop: 5,
-    marginRight: 20,
+    marginBottom: 10,
     borderRadius: 4,
     backgroundColor: theme.palette.common.white,
     border: "1px solid #ced4da",
     fontSize: 16,
-    padding: "10px 12px",
+    padding: "12px",
     width: "calc(100% - 24px)",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     fontFamily: [
@@ -37,43 +30,32 @@ const styles = theme => ({
       borderColor: "#80bdff",
       boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
     }
-  },
-  bootstrapFormLabel: {
-    fontSize: 18,
-    fontWeight: 700,
-    color: "black"
   }
 });
 
-const StyledTextField = ({
-  input,
-  label,
-  meta: { touched, error },
-  ...props
-}) => {
-  const { classes } = props;
-
+const SearchBar = props => {
+  const { classes, searchText, onChange } = props;
   return (
     <TextField
       type="text"
+      placeholder="Search for event by name"
+      value={searchText}
+      onChange={onChange}
       margin="normal"
-      label={label}
-      error={touched && error}
-      helperText="" // need to fill this in with a useful msg
-      {...input}
+      fullWidth
       InputProps={{
         disableUnderline: true,
         classes: {
-          root: classes.bootstrapRoot,
           input: classes.bootstrapInput
-        }
-      }}
-      InputLabelProps={{
-        shrink: true,
-        className: classes.bootstrapFormLabel
+        },
+        startAdornment: (
+          <InputAdornment position="start">
+            <Search />
+          </InputAdornment>
+        )
       }}
     />
   );
 };
 
-export default withStyles(styles)(StyledTextField);
+export default withStyles(styles)(SearchBar);

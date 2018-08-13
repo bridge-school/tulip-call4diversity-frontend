@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import { loading } from "./loading";
 import { errors } from "./errors";
-import { conferences } from "./conferences";
 import { common } from "./common";
+import { conferences, search } from "./conferences";
 import { reducer as formReducer } from "redux-form";
 
 /**
@@ -14,5 +14,6 @@ export const rootReducer = combineReducers({
   errors,
   conferences,
   common,
+  search,
   form: formReducer
 });
