@@ -44,9 +44,9 @@ class AppHeader extends Component {
                                 Speak EZ
                             </Typography>
                             {/* NOTE: The button is currently being toggled based on whether the form is showing or not */}
-                            { !this.props.buttonStatus
+                            { !this.props.common.displayForm
                             ?
-                                <Button variant="contained" color="primary" className={classes.button} /*FOR THE FUTURE, A TRIGGER! onClick={componentShow(displayForm) hideComponent(displayConferences)}*/>
+                                <Button variant="contained" color="primary" className={classes.button} onClick={() => {this.props.conferencesHide(); this.props.formShow()}}>
                                     Submit Event
                                 </Button>
                             : null }

@@ -10,19 +10,29 @@ import PageTitle from "./components/PageTitle";
 import FormContainer from "./components/Form/FormContainer";
 import EventsContainer from "./containers/EventsContainer";
 
+
+
 class App extends Component {
 
   render() {
+
+    const {
+      common,
+      formShow,
+      conferencesHide,
+      conferencesShow,
+    } = this.props;
+
     return (
       <div>
         <CssBaseline />
         {/* TODO: Pass button status down from common state - can use showButton or !showForm */}
-        <AppHeader buttonStatus={false}/>
+        <AppHeader conferencesHide={conferencesHide} formShow={formShow} common={common}/>
 
         {/* TODO: Once common state is working, uncomment the props below and it should work (can't test so it might not work, but theoretically it should) */}
         <PageContent>
             
-            { true /* this.props.fakeProps.displayLoading /* { this.props.common.displayLoading */
+            {  this.props.common.displayLoading 
               ?
               <div>
                 <PageTitle name="Loading..." />
@@ -31,21 +41,21 @@ class App extends Component {
               : null
             }
 
-            { true /*this.props.fakeProps.displayConferences /* { this.props.common.displayConferences */
+            { this.props.common.displayConferences 
 
               ? 
               <div>
                 <PageTitle name="Upcoming Events" />
-                <EventsContainer />
+                <EventsContainer conferencesShow={conferencesShow} />
               </div>
               : null
             }
 
-            { true /*this.props.fakeProps.displayForm /*  { this.props.common.displayForm */
+            { this.props.common.displayForm 
               ? 
               <div>
                 <PageTitle name="Submit an Event" />
-                <FormContainer />
+                <FormContainer conferencesShow={conferencesShow} />
               </div>
               : null
             }

@@ -50,22 +50,46 @@ const getConferencesFailure = () => ({
 
 export const COMMON_ACTIONS = {
   COMPONENT_SHOW: "COMPONENT_SHOW",
-  COMPONENT_HIDE: "COMPONENT_HIDE"
+  COMPONENT_HIDE: "COMPONENT_HIDE",
+  CONFERENCES_SHOW: "CONFERENCES_SHOW",
+  CONFERENCES_HIDE: "CONFERENCES_HIDE",
+  FORM_SHOW: "FORM_SHOW",
+  FORM_HIDE: "FORM_HIDE",
+  LOADING_SHOW: "LOADING_SHOW",
+  LOADING_HIDE: "LOADING_HIDE",
 };
 
 //Action Creators
 const componentShow = (showX) => ({
-  type: COMMON_ACTIONS.COMPONENT_SHOW,
-  payload: {
-    showX
-  }
+  type: COMMON_ACTIONS.COMPONENT_SHOW
 });
 
 const componentHide = (showX) => ({
-  type: COMMON_ACTIONS.COMPONENT_HIDE,
-  payload: {
-    showX
-  }
+  type: COMMON_ACTIONS.COMPONENT_HIDE
+});
+
+const conferencesShow = (showX) => ({
+  type: COMMON_ACTIONS.CONFERENCES_SHOW
+});
+
+const conferencesHide = (showX) => ({
+  type: COMMON_ACTIONS.CONFERENCES_HIDE
+});
+
+const formShow = (showX) => ({
+  type: COMMON_ACTIONS.FORM_SHOW
+});
+
+const formHide = (showX) => ({
+  type: COMMON_ACTIONS.FORM_HIDE
+});
+
+const loadingShow = (showX) => ({
+  type: COMMON_ACTIONS.LOADING_SHOW
+});
+
+const loadingHide = (showX) => ({
+  type: COMMON_ACTIONS.LOADING_HIDE
 });
 
 // OLD FORMAT 
