@@ -7,7 +7,6 @@ import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
 import DateTimePicker from "react-widgets/lib/DateTimePicker";
 import Divider from "@material-ui/core/Divider";
-import Button from "@material-ui/core/Button";
 import conferences from "../../api/conferences";
 
 import { renderRadioButtonGroup } from "./RadioButton";
@@ -61,9 +60,7 @@ export const SubmissionForm = props => (
         type="url"
         label="Event Website"
       />
-      {/* Date Picker */}
-      {/* testing */}
-      <DateTimePicker />
+      <DateTimePicker/>
       <Field
         name="city"
         component={StyledTextField}
@@ -73,8 +70,6 @@ export const SubmissionForm = props => (
       <Divider />
     </div>
     <div className="form-block">
-      {/* Date Picker */}
-      {/* testing */}
       <DateTimePicker />
       <Field
         name="submissionUrl"

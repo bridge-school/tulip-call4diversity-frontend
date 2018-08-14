@@ -10,6 +10,7 @@ const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
     format="DD MMM YYYY"
     time={showTime}
     value={!value ? null : new Date(value)}
+    defaultValue={new Date()}
   />
 
   export default renderDateTimePicker;
