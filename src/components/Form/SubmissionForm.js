@@ -7,7 +7,6 @@ import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
 import DateTimePicker from "react-widgets/lib/DateTimePicker";
 import Divider from "@material-ui/core/Divider";
-import Button from "@material-ui/core/Button";
 import conferences from "../../api/conferences";
 
 import { renderRadioButtonGroup } from "./RadioButton";
@@ -46,6 +45,11 @@ const scholarship = "scholarship";
 //   </div>
 // )
 
+const WrappedDateTimePicker = (props) => {
+  const onChange = props.input.onChange;
+  return <DateTimePicker onChange={onChange} />;
+};
+
 export const SubmissionForm = props => (
   <form action="" onSubmit={props.handleSubmit}>
     <div className="form-block">
@@ -63,7 +67,7 @@ export const SubmissionForm = props => (
       />
       {/* Date Picker */}
       {/* testing */}
-      <DateTimePicker />
+      <Field name="startDate" label="Start Date" component={WrappedDateTimePicker} />
       <Field
         name="city"
         component={StyledTextField}
@@ -75,7 +79,7 @@ export const SubmissionForm = props => (
     <div className="form-block">
       {/* Date Picker */}
       {/* testing */}
-      <DateTimePicker />
+      {/*<DateTimePicker />*/}
       <Field
         name="submissionUrl"
         component={StyledTextField}
