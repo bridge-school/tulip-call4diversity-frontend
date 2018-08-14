@@ -65,13 +65,12 @@ export const SubmissionForm = props => (
         type="url"
         label="Event Website"
       />
-<<<<<<< HEAD
-      <DateTimePicker/>
-=======
       {/* Date Picker */}
-      {/* testing */}
-      <Field name="startDate" label="Start Date" component={WrappedDateTimePicker} />
->>>>>>> 3b7aee68727f6eeb8cb706dd63a87dd9f0431825
+      <Field 
+        name="startDate" 
+        label="Event Date" 
+        component={WrappedDateTimePicker} 
+      />
       <Field
         name="city"
         component={StyledTextField}
@@ -81,13 +80,12 @@ export const SubmissionForm = props => (
       <Divider />
     </div>
     <div className="form-block">
-<<<<<<< HEAD
-      <DateTimePicker />
-=======
       {/* Date Picker */}
-      {/* testing */}
-      {/*<DateTimePicker />*/}
->>>>>>> 3b7aee68727f6eeb8cb706dd63a87dd9f0431825
+      <Field 
+        name="submissionDueDate" 
+        label="Submission Due Date" 
+        component={WrappedDateTimePicker} 
+      />
       <Field
         name="submissionUrl"
         component={StyledTextField}
