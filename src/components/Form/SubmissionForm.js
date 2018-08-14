@@ -5,10 +5,9 @@ import StyledTextField from "./TextInput";
 import "react-widgets/dist/css/react-widgets.css";
 import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
-import DateTimePicker from "react-widgets/lib/DateTimePicker";
 import Divider from "@material-ui/core/Divider";
 import conferences from "../../api/conferences";
-
+import WrappedDateTimePicker from './DatePicker';
 import { renderRadioButtonGroup } from "./RadioButton";
 
 Moment.locale("en");
@@ -44,11 +43,6 @@ const scholarship = "scholarship";
 //     </div>
 //   </div>
 // )
-
-const WrappedDateTimePicker = (props) => {
-  const onChange = props.input.onChange;
-  return <DateTimePicker onChange={onChange} />;
-};
 
 export const SubmissionForm = props => (
   <form action="" onSubmit={props.handleSubmit}>
