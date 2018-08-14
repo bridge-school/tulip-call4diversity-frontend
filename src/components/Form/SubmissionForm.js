@@ -45,6 +45,11 @@ const scholarship = "scholarship";
 //   </div>
 // )
 
+const WrappedDateTimePicker = (props) => {
+  const onChange = props.input.onChange;
+  return <DateTimePicker onChange={onChange} />;
+};
+
 export const SubmissionForm = props => (
   <form action="" onSubmit={props.handleSubmit}>
     <div className="form-block">
@@ -60,7 +65,13 @@ export const SubmissionForm = props => (
         type="url"
         label="Event Website"
       />
+<<<<<<< HEAD
       <DateTimePicker/>
+=======
+      {/* Date Picker */}
+      {/* testing */}
+      <Field name="startDate" label="Start Date" component={WrappedDateTimePicker} />
+>>>>>>> 3b7aee68727f6eeb8cb706dd63a87dd9f0431825
       <Field
         name="city"
         component={StyledTextField}
@@ -70,7 +81,13 @@ export const SubmissionForm = props => (
       <Divider />
     </div>
     <div className="form-block">
+<<<<<<< HEAD
       <DateTimePicker />
+=======
+      {/* Date Picker */}
+      {/* testing */}
+      {/*<DateTimePicker />*/}
+>>>>>>> 3b7aee68727f6eeb8cb706dd63a87dd9f0431825
       <Field
         name="submissionUrl"
         component={StyledTextField}
