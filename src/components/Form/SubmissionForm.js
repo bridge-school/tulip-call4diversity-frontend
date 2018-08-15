@@ -1,7 +1,9 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import Button from '@material-ui/core/Button';
+
 import StyledTextField from "./TextInput";
+
 import "react-widgets/dist/css/react-widgets.css";
 import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
@@ -12,6 +14,8 @@ import { renderRadioButtonGroup } from './RadioButton';
 import validate from './formValidations';
 import WrappedDateTimePicker from './DatePicker';
 
+import './FormStyles.css';
+
 Moment.locale("en");
 momentLocalizer();
 
@@ -20,7 +24,7 @@ const codeOfConduct = "codeOfConduct";
 const scholarship = "scholarship";
 
 export const SubmissionForm = props => (
-  <form action="" onSubmit={props.handleSubmit}>
+  <form action="" onSubmit={props.handleSubmit(props.onSubmit)}>
     <div className="form-block">
       <Field
         name="eventName"
@@ -34,7 +38,6 @@ export const SubmissionForm = props => (
         type="url"
         label="Event Website"
       />
-      {/* Date Picker */}
       <Field 
         name="startDate" 
         label="Event Date" 
@@ -48,8 +51,8 @@ export const SubmissionForm = props => (
       />
       <Divider />
     </div>
+    
     <div className="form-block">
-      {/* Date Picker */}
       <Field 
         name="submissionDueDate" 
         label="Submission Due Date" 
@@ -60,7 +63,6 @@ export const SubmissionForm = props => (
         component={StyledTextField}
         label="Submission Website"
       />
-
       <Field
         name={compensation}
         component={renderRadioButtonGroup(
@@ -82,9 +84,9 @@ export const SubmissionForm = props => (
           "Does your event provide diversity scholarships?"
         )}
       />
-
       <Divider />
     </div>
+
     <div className="form-block">
       <Field
         name="contactName"
@@ -100,11 +102,16 @@ export const SubmissionForm = props => (
       />
       <Divider />
     </div>
+
     <Button
       type="submit"
       disabled={props.pristine || props.submitting}
       variant="contained"
       color="primary"
+      onSubmit={() => {
+        this.props.formHide();
+        this.props.conferencesShow();
+      }}
     >
       Submit Event
     </Button>
@@ -119,10 +126,6 @@ export const SubmissionForm = props => (
     </Button>
   </form>
 );
-
-const onSubmit = values => {
-  conferences.postSubmissionForm(values);
-};
 
 export default reduxForm({ form: 'SubmissionForm', onSubmit, validate })(SubmissionForm);
 
