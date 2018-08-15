@@ -127,5 +127,5 @@ export const SubmissionForm = props => (
   </form>
 );
 
-export default reduxForm({ form: 'SubmissionForm', onSubmit, validate })(SubmissionForm);
+export default reduxForm({ form: 'SubmissionForm', validate})(SubmissionForm);
 
