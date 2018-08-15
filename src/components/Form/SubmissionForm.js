@@ -6,7 +6,6 @@ import "react-widgets/dist/css/react-widgets.css";
 import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
 import Divider from "@material-ui/core/Divider";
-import WrappedDateTimePicker from './DatePicker';
 import { renderRadioButtonGroup } from "./RadioButton";
 import './FormStyles.css';
 
