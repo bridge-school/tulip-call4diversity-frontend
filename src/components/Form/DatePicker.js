@@ -7,5 +7,4 @@ const WrappedDatePicker = ({label, ...props}) => {
   return <div>{label}<DatePicker onChange={onChange}/></div>;
 };
 
-// export default withStyles(styles)(WrappedDateTimePicker);
 export default WrappedDatePicker;
