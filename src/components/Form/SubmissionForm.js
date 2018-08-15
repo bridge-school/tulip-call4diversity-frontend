@@ -7,7 +7,7 @@ import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
 import Divider from "@material-ui/core/Divider";
 import conferences from "../../api/conferences";
-import WrappedDateTimePicker from './DatePicker';
+import WrappedDatePicker from './DatePicker';
 import { renderRadioButtonGroup } from "./RadioButton";
 
 Moment.locale("en");
@@ -63,7 +63,7 @@ export const SubmissionForm = props => (
       <Field 
         name="startDate" 
         label="Event Date" 
-        component={WrappedDateTimePicker} 
+        component={WrappedDatePicker} 
       />
       <Field
         name="city"
@@ -78,7 +78,7 @@ export const SubmissionForm = props => (
       <Field 
         name="submissionDueDate" 
         label="Submission Due Date" 
-        component={WrappedDateTimePicker} 
+        component={WrappedDatePicker} 
       />
       <Field
         name="submissionUrl"
