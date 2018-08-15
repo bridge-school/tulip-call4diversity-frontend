@@ -1,6 +1,5 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import Button from '@material-ui/core/Button';
 import StyledTextField from "./TextInput";
 import "react-widgets/dist/css/react-widgets.css";
 import Moment from "moment";
