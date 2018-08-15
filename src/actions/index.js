@@ -23,9 +23,6 @@ export const getAllConferences = dispatch => {
     .getAll()
     .then(res => {
       dispatch(getConferencesSuccess(res.data));
-      console.log('YO');
-      dispatch(formHide());
-      dispatch(conferencesShow());
     })
     .catch(err => {
       dispatch(getConferencesFailure());
@@ -75,25 +72,25 @@ const conferencesShow = () => ({
   type: COMMON_ACTIONS.CONFERENCES_SHOW
 });
 
-const conferencesHide = () => ({
-  type: COMMON_ACTIONS.CONFERENCES_HIDE
-});
+// const conferencesHide = () => ({
+//   type: COMMON_ACTIONS.CONFERENCES_HIDE
+// });
 
-const formShow = () => ({
-  type: COMMON_ACTIONS.FORM_SHOW
-});
+// const formShow = () => ({
+//   type: COMMON_ACTIONS.FORM_SHOW
+// });
 
 const formHide = () => ({
   type: COMMON_ACTIONS.FORM_HIDE
 });
 
-const loadingShow = () => ({
-  type: COMMON_ACTIONS.LOADING_SHOW
-});
+// const loadingShow = () => ({
+//   type: COMMON_ACTIONS.LOADING_SHOW
+// });
 
-const loadingHide = () => ({
-  type: COMMON_ACTIONS.LOADING_HIDE
-});
+// const loadingHide = () => ({
+//   type: COMMON_ACTIONS.LOADING_HIDE
+// });
 
 // OLD FORMAT
 // export const componentShow = (showX, bool) => store.dispatch({ type: COMMON_ACTIONS.COMPONENT_SHOW, showX, bool});
@@ -113,19 +110,15 @@ const addNewConferenceFailure = () => ({
 
 // TODO: use this thunk in SubmissionForm
 export const addNewConference = values => dispatch => {
-  console.log(values)
-  return   conferences
+  return conferences
   .postSubmissionForm(values)
   .then(res => {
-    console.log(res);
     dispatch(addNewConferenceSuccess(res.data));
     // TODO: call get conference API call
-    console.log('YO');
     dispatch(formHide());
     dispatch(conferencesShow());  
   })
   .catch(err => {
-    console.log(err);
     dispatch(addNewConferenceFailure());
   });
 }
