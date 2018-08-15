@@ -53,25 +53,30 @@ const StyledTextField = ({
   const { classes } = props;
 
   return (
-    <TextField
-      type="text"
-      margin="normal"
-      label={label}
-      errorText={touched && error}
-      {...input}
-      {...custom}
-      InputProps={{
-        disableUnderline: true,
-        classes: {
-          root: classes.bootstrapRoot,
-          input: classes.bootstrapInput,
-        },
-      }}
-      InputLabelProps={{
-        shrink: true,
-        className: classes.bootstrapFormLabel,
-      }}
-    />
+    <div>
+      <TextField
+        type="text"
+        margin="normal"
+        label={label}
+        errorText={touched && error}
+        {...input}
+        {...custom}
+        InputProps={{
+          disableUnderline: true,
+          classes: {
+            root: classes.bootstrapRoot,
+            input: classes.bootstrapInput,
+          },
+        }}
+        InputLabelProps={{
+          shrink: true,
+          className: classes.bootstrapFormLabel,
+        }}
+      />
+      <div>
+        {touched && error && <span>{error}</span>}
+      </div>
+    </div>
   );
 };
 
