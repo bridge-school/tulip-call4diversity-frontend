@@ -18,6 +18,10 @@ class App extends Component {
 
   }
 
+  handleSubmit = values => {
+    this.props.addNewConference(values)
+  }
+
 
   render() {
 
@@ -61,7 +65,7 @@ class App extends Component {
               ? 
               <div>
                 <PageTitle name="Submit an Event" />
-                <FormContainer conferencesShow={conferencesShow} formHide={formHide} />
+                <FormContainer onSubmit={this.handleSubmit} />
               </div>
               : null
             }

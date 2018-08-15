@@ -23,6 +23,9 @@ export const getAllConferences = dispatch => {
     .getAll()
     .then(res => {
       dispatch(getConferencesSuccess(res.data));
+      console.log('YO');
+      dispatch(formHide());
+      dispatch(conferencesShow());
     })
     .catch(err => {
       dispatch(getConferencesFailure());
@@ -109,16 +112,24 @@ const addNewConferenceFailure = () => ({
 });
 
 // TODO: use this thunk in SubmissionForm
-export const addNewConference = values => dispatch =>
-  conferences
-    .postSubmissionForm(values)
-    .then(res => {
-      dispatch(addNewConferenceSuccess(res.data));
-      // TODO: call get conference API call
-    })
-    .catch(err => {
-      dispatch(addNewConferenceFailure());
-    });
+export const addNewConference = values => dispatch => {
+  console.log(values)
+  return   conferences
+  .postSubmissionForm(values)
+  .then(res => {
+    console.log(res);
+    dispatch(addNewConferenceSuccess(res.data));
+    // TODO: call get conference API call
+    console.log('YO');
+    dispatch(formHide());
+    dispatch(conferencesShow());  
+  })
+  .catch(err => {
+    console.log(err);
+    dispatch(addNewConferenceFailure());
+  });
+}
+
 // -----------------------------
 
 // -- SEARCH FOR CONFERENCE BY NAME

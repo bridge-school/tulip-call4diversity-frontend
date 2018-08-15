@@ -3,7 +3,7 @@
 import { connect } from "react-redux";
 
 import App from "../App";
-import { COMMON_ACTIONS } from "../actions/index";
+import { COMMON_ACTIONS, addNewConference } from "../actions/index";
 
 const mapDispatchToProps = dispatch => ({
   // Leaving this in here for potential future refactoring
@@ -29,6 +29,7 @@ const mapDispatchToProps = dispatch => ({
   formHide: () => dispatch({type: COMMON_ACTIONS.FORM_HIDE}),
   loadingShow: () => dispatch({type: COMMON_ACTIONS.LOADING_SHOW}),
   loadingHide: () => dispatch({type: COMMON_ACTIONS.LOADING_HIDE}),
+  addNewConference: values => dispatch(addNewConference(values))
 });
 
 
