@@ -11,7 +11,8 @@ const styles = theme => ({
     position: 'absolute',
     left: '13px',
     top: '27px',
-    zIndex: 1000
+    zIndex: 1000,
+    color: '#757575'
   },
   bootstrapInput: {
     marginBottom: 10,
