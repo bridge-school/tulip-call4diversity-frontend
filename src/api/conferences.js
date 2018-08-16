@@ -7,10 +7,6 @@ import qs from 'qs';
  */
 const sanitizeValues = values => ({
   ...values,
-  state: 'Ontario',
-  submissionDueDate: '',
-  country: 'Canada',
-  eventDate: '',
   compensation: values.compensation === 'yes' ? true : false,
   codeOfConduct: values.codeOfConduct === 'yes' ? true : false,
   scholarship: values.scholarship === 'yes' ? true : false
@@ -34,7 +30,6 @@ export default {
         ? { ...data, submissionUrl: `http://${data.submissionUrl}` }
         : data;
 
-    console.log(data);
     const config = {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     };
