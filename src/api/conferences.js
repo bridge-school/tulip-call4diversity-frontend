@@ -1,30 +1,44 @@
-import { API_BASE_URL } from "./config";
-import axios from "axios";
-import qs from "qs";
+import { API_BASE_URL } from './config';
+import axios from 'axios';
+import qs from 'qs';
 
 /**
  * API Calls related to the list of conferences on the home page
  */
 const sanitizeValues = values => ({
   ...values,
-  state: "Ontario",
-  submissionDueDate: "",
-  country: "Canada",
-  eventDate: "",
-  compensation: values.compensation === "yes" ? true : false,
-  codeOfConduct: values.codeOfConduct === "yes" ? true : false,
-  scholarship: values.scholarship === "yes" ? true : false
+  state: 'Ontario',
+  submissionDueDate: '',
+  country: 'Canada',
+  eventDate: '',
+  compensation: values.compensation === 'yes' ? true : false,
+  codeOfConduct: values.codeOfConduct === 'yes' ? true : false,
+  scholarship: values.scholarship === 'yes' ? true : false
 });
 
 export default {
   getAll: () => axios.get(`${API_BASE_URL}/conference`),
   postSubmissionForm: values => {
-    const data = sanitizeValues(values);
-    
+    let data = sanitizeValues(values);
+
+    data =
+      data.url &&
+      (!data.url.includes('http://') && !data.url.includes('https://'))
+        ? { ...data, url: `http://${data.url}` }
+        : data;
+
+    data =
+      data.submissionUrl &&
+      (!data.submissionUrl.includes('http://') &&
+        !data.submissionUrl.includes('https://'))
+        ? { ...data, submissionUrl: `http://${data.submissionUrl}` }
+        : data;
+
+    console.log(data);
     const config = {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     };
-    console.log('from the axios')
-   return axios.post(`${API_BASE_URL}/conference`, qs.stringify(data), config);
+
+    return axios.post(`${API_BASE_URL}/conference`, qs.stringify(data), config);
   }
 };
