@@ -116,7 +116,7 @@ export const SubmissionForm = props => (
       variant="text"
       color="secondary"
     >
-      Clear Values
+      Reset Form
     </Button>
   </form>
 );
