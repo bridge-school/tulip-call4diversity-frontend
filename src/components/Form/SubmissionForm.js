@@ -1,13 +1,14 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import Button from '@material-ui/core/Button';
 import StyledTextField from "./TextInput";
 import "react-widgets/dist/css/react-widgets.css";
 import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
+import Button from '@material-ui/core/Button';
+import { renderRadioButtonGroup } from './RadioButton';
+import validate from './formValidations';
 import Divider from "@material-ui/core/Divider";
 import WrappedDatePicker from './DatePicker';
-import { renderRadioButtonGroup } from "./RadioButton";
 import './FormStyles.css';
 
 Moment.locale("en");
@@ -21,7 +22,7 @@ export const SubmissionForm = props => (
   <form action="" onSubmit={props.handleSubmit(props.onSubmit)}>
     <div className="form-block">
       <Field
-        name="name"
+        name="eventName"
         component={StyledTextField}
         type="text"
         label="Event Name"
@@ -121,5 +122,5 @@ export const SubmissionForm = props => (
   </form>
 );
 
+export default reduxForm({ form: 'SubmissionForm', validate})(SubmissionForm);
 
-export default reduxForm({ form: "SubmissionForm" })(SubmissionForm);
