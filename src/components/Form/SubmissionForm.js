@@ -113,7 +113,7 @@ export const SubmissionForm = props => (
       type="button"
       disabled={props.pristine || props.submitting}
       onClick={props.reset}
-      variant="contained"
+      variant="text"
       color="secondary"
     >
       Clear Values
